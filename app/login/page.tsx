@@ -1,1 +1,0 @@
-import Sidebar from "../../components/Sidebar";import Topbar from "../../components/Topbar";export default function P(){return <div style={{display:"flex",minHeight:"100vh",background:"#F5F6F8"}}><Sidebar/><div style={{flex:1}}><Topbar/><main style={{padding:24}}><h1>Login</h1><p>Login module scaffold.</p></main></div></div>}
