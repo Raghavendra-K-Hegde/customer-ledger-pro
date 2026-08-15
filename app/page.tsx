@@ -1,0 +1,1 @@
+export default function Home(){return <main style={{fontFamily:"sans-serif",padding:40}}><h1>RaghDemo – Customer Ledger Pro</h1><p>Production scaffold generated.</p></main>}
