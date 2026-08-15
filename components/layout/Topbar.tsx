@@ -1,0 +1,1 @@
+export default function Topbar(){return <header style={{padding:18,borderBottom:"1px solid #ddd",background:"white"}}><b>Customer Ledger Pro v3</b></header>}

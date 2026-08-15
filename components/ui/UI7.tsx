@@ -1,0 +1,1 @@
+export default function UI7(){return <div>UI7</div>}

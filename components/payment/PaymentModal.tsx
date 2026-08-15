@@ -1,0 +1,1 @@
+export default function PaymentModal(){return <div style={{background:"white",padding:20,borderRadius:12}}><h3>Payment</h3><select><option>Cash</option><option>UPI</option><option>NEFT</option><option>Cheque</option><option>Credit Card</option><option>Debit Card</option></select><input placeholder="UTR/Cheque/Card"/></div>}

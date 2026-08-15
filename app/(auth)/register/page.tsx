@@ -1,0 +1,1 @@
+export default function(){return <main style={{padding:40}}><h2>Register</h2><input placeholder="Email"/><input placeholder="Password" type="password"/><button>Create</button></main>}

@@ -1,0 +1,1 @@
+export default function UI13(){return <div>UI13</div>}

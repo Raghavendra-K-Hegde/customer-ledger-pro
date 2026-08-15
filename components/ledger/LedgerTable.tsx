@@ -1,0 +1,1 @@
+export default function LedgerTable(){return <table style={{width:"100%",background:"white"}}><thead><tr><th>Date</th><th>Invoice</th><th>Debit</th><th>Credit</th><th>Balance</th></tr></thead><tbody><tr><td>Today</td><td>INV001</td><td>5000</td><td>2000</td><td>3000</td></tr></tbody></table>}

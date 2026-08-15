@@ -1,0 +1,1 @@
+export default function UI20(){return <div>UI20</div>}

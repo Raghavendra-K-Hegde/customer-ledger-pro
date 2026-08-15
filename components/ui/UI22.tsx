@@ -1,0 +1,1 @@
+export default function UI22(){return <div>UI22</div>}

@@ -1,0 +1,1 @@
+export default function Sidebar(){return <aside style={{width:230,background:"#BE123C",color:"white",padding:20,minHeight:"100vh"}}><h2>RaghDemo</h2><nav>{"Dashboard,New Sale,Ledger,Customers,Brands,Models,Items,Sales Persons,Reports,Settings".split(",").map(i=><div key={i} style={{padding:8}}>{i}</div>)}</nav></aside>}

@@ -1,0 +1,1 @@
+export const calc=(mrp:number,d:number,credit:number)=>({total:mrp-d,balance:mrp-d-credit});

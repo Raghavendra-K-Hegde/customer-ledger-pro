@@ -1,0 +1,1 @@
+export default function InvoicePreview(){return <div style={{background:"white",padding:20,borderRadius:12}}><h3>Invoice Preview</h3><p>Ready for A4 printing.</p></div>}

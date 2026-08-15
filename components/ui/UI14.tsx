@@ -1,0 +1,1 @@
+export default function UI14(){return <div>UI14</div>}

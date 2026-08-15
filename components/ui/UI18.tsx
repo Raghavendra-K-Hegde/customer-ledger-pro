@@ -1,0 +1,1 @@
+export default function UI18(){return <div>UI18</div>}

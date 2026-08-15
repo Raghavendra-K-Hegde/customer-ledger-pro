@@ -1,0 +1,1 @@
+export default function KPI({t,v}:{t:string,v:string}){return <div style={{background:"white",padding:20,borderRadius:12}}><small>{t}</small><h2>{v}</h2></div>}

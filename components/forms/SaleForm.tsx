@@ -1,0 +1,1 @@
+export default function SaleForm(){return <div style={{display:"grid",gap:10}}><input type="date"/><input placeholder="Customer"/><input placeholder="Brand"/><input placeholder="Model"/><input placeholder="Item"/><input placeholder="MRP"/><input placeholder="Discount % or ₹"/><input placeholder="Debit"/><input placeholder="Credit"/><strong>Balance: Auto</strong></div>}

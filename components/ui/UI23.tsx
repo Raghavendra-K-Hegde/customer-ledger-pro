@@ -1,0 +1,1 @@
+export default function UI23(){return <div>UI23</div>}

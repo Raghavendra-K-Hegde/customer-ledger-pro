@@ -1,0 +1,1 @@
+export default function CustomerForm(){return <div style={{display:"grid",gap:10}}><input placeholder="Customer Name"/><input placeholder="Phone"/><textarea placeholder="Address"/></div>}
