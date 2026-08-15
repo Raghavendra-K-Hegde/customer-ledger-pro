@@ -1,3 +1,1 @@
-# Customer Ledger Pro
-
-Vyapar-style customer ledger app.
+# RaghDemo v1.0

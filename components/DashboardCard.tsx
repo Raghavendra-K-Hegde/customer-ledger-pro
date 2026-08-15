@@ -1,0 +1,1 @@
+export default function DashboardCard({title,value}:{title:string,value:string}){return <div style={{background:"white",padding:20,borderRadius:12}}><small>{title}</small><h2>{value}</h2></div>}

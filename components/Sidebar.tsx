@@ -1,0 +1,1 @@
+export default function Sidebar(){return <aside style={{width:220,padding:16,background:"#BE123C",color:"white"}}>RaghDemo</aside>}

@@ -1,17 +1,26 @@
 {
+<<<<<<< HEAD
   "name": "raghdemo",
   "version": "1.0.0",
+=======
+  "name": "raghdemo-ledger",
+>>>>>>> d15c438 (Version 1.0 Production Dashboard)
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+<<<<<<< HEAD
     "start": "next start",
     "lint": "next lint"
+=======
+    "start": "next start"
+>>>>>>> d15c438 (Version 1.0 Production Dashboard)
   },
   "dependencies": {
     "next": "14.2.15",
     "react": "18.2.0",
     "react-dom": "18.2.0"
+<<<<<<< HEAD
   },
   "devDependencies": {
     "typescript": "^5.6.3",
@@ -19,3 +28,7 @@
     "@types/node": "^22.7.4"
   }
 }
+=======
+  }
+}
+>>>>>>> d15c438 (Version 1.0 Production Dashboard)

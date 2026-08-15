@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "RaghDemo",
-  description: "Customer Ledger Pro",
+  title: "RaghDemo Customer Ledger Pro",
+  description: "Vyapar-style Customer Ledger",
 };
 
 export default function RootLayout({
@@ -10,7 +10,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body
+        style={{
+          margin: 0,
+          fontFamily: "Segoe UI, Arial, sans-serif",
+          background: "#F5F6F8",
+        }}
+      >
+        {children}
+      </body>
     </html>
   );
 }
