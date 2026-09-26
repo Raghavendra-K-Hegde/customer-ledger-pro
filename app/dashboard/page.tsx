@@ -45,7 +45,7 @@ export default function Dashboard(){
    </section>
    <section className="panel"><div className="panel-title"><div><h2>Receivables</h2><p>Money customers owe you</p></div></div><div className="receivable"><span>Outstanding</span><strong>{money(stats.due)}</strong><div className="bar"><i style={{width:(stats.sales?Math.min(100,stats.due/stats.sales*100):0)+"%"}}/></div><small>{stats.sales?Math.round(stats.due/stats.sales*100):0}% of invoiced sales pending</small></div><a className="report-link" href="/reports">Open Outstanding Report →</a></section>
   </div>
- </main><style jsx global>{css}</style></div></div>
+ </main><style>{css}</style></div></div>
 }
 function Metric({label,value,hint,warn}:{label:string;value:string;hint:string;warn?:boolean}){return <div className={"metric "+(warn?"warn":"")}><span>{label}</span><strong>{value}</strong><small>{hint}</small></div>}
 const css=`
