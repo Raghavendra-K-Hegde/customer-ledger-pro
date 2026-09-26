@@ -1,0 +1,18 @@
+"use client";
+import {useEffect,useState} from "react";import {useParams} from "next/navigation";
+type Invoice={id:string;number:string;partyId:string;partyName:string;date:string;item:string;qty:number;rate:number;discount:number;total:number;paid:number;status:"Paid"|"Partial"|"Unpaid"};
+const KEY="raghdemo-ledger-invoices-v4";const money=new Intl.NumberFormat("en-IN",{style:"currency",currency:"INR",maximumFractionDigits:2});
+export default function InvoicePage(){const params=useParams(),[invoice,setInvoice]=useState<Invoice|null|undefined>(undefined);
+ useEffect(()=>{try{const rows=JSON.parse(localStorage.getItem(KEY)||"[]") as Invoice[];setInvoice(rows.find(x=>x.id===String(params.id))||null)}catch{setInvoice(null)}},[params.id]);
+ if(invoice===undefined)return <main style={page}>Loading invoice…</main>;if(!invoice)return <main style={page}><h1>Invoice not found</h1><a href="/sales">Back to Sales</a></main>;
+ const due=Math.max(0,invoice.total-invoice.paid);
+ return <main style={page}><div className="no-print" style={{display:"flex",justifyContent:"space-between",marginBottom:20}}><a href="/sales">← Back to Sales</a><button onClick={()=>window.print()} style={button}>Print Invoice</button></div>
+ <section style={paper}><header style={{display:"flex",justifyContent:"space-between",gap:20,borderBottom:"2px solid #101828",paddingBottom:18}}><div><h1 style={{margin:0}}>RaghDemo</h1><div style={muted}>Customer Ledger Pro</div></div><div style={{textAlign:"right"}}><h2 style={{margin:0}}>TAX INVOICE</h2><strong>{invoice.number}</strong><div style={muted}>{invoice.date}</div></div></header>
+ <div style={{padding:"22px 0"}}><div style={muted}>Bill To</div><h3 style={{margin:"4px 0"}}>{invoice.partyName}</h3></div>
+ <table style={{width:"100%",borderCollapse:"collapse"}}><thead><tr>{["Description","Qty","Rate","Discount","Amount"].map(h=><th key={h} style={th}>{h}</th>)}</tr></thead><tbody><tr><td style={td}>{invoice.item}</td><td style={td}>{invoice.qty}</td><td style={td}>{money.format(invoice.rate)}</td><td style={td}>{money.format(invoice.discount)}</td><td style={td}>{money.format(invoice.total)}</td></tr></tbody></table>
+ <div style={{marginLeft:"auto",width:"min(340px,100%)",paddingTop:24,display:"grid",gap:9}}><Line label="Invoice Total" value={money.format(invoice.total)}/><Line label="Paid" value={money.format(invoice.paid)}/><Line label="Balance Due" value={money.format(due)} strong/><Line label="Status" value={invoice.status} strong/></div>
+ <footer style={{marginTop:50,paddingTop:16,borderTop:"1px solid #eaecf0",color:"#667085",fontSize:12}}>Thank you for your business.</footer></section>
+ <style jsx global>{`@media print{.no-print{display:none!important}body{background:#fff!important}main{padding:0!important}.invoice-paper{box-shadow:none!important;border:0!important}}`}</style></main>
+}
+function Line({label,value,strong=false}:{label:string;value:string;strong?:boolean}){return <div style={{display:"flex",justifyContent:"space-between",borderBottom:"1px solid #f2f4f7",paddingBottom:8,fontWeight:strong?700:400}}><span>{label}</span><span>{value}</span></div>}
+const page={minHeight:"100vh",background:"#f5f6f8",padding:24,fontFamily:"Arial, sans-serif"};const paper={maxWidth:850,margin:"0 auto",background:"#fff",padding:36,border:"1px solid #eaecf0",borderRadius:10,boxShadow:"0 8px 24px rgba(16,24,40,.06)"};const muted={color:"#667085",fontSize:13};const button={border:0,borderRadius:8,padding:"10px 14px",background:"#101828",color:"#fff",fontWeight:600,cursor:"pointer"};const th={textAlign:"left" as const,padding:"11px 8px",background:"#f9fafb",borderBottom:"1px solid #d0d5dd",fontSize:12};const td={padding:"14px 8px",borderBottom:"1px solid #eaecf0",fontSize:13};
